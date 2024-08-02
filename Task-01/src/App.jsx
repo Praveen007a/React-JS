@@ -1,12 +1,64 @@
+import { useState } from 'react';
 import './App.css'
 
 function App() {
+  const [select,setSelect]=useState(null);
 
-
+  const HandleSS=(id)=>{
+    setSelect(id);
+  }
+  const datas = [
+    {
+      id  : '1',
+      question: "What are accordion components?",
+      answer:
+        "Accordion components are user interface elements used for organizing and presenting content in a collapsible manner. They typically consist of a header, content, and an expand/collapse action.",
+    },
+    {
+      id  : '2',
+      question: "What are they used for?",
+      answer:
+        "They are commonly employed in various contexts, including FAQs, product descriptions, navigation menus, settings panels, and data tables, to save screen space and provide a structured and user-friendly interface for presenting information or options.",
+    },
+    {
+      id  : '3',
+      question: "Accordion as a musical instrument",
+      answer:
+        "The accordion is a musical instrument with a keyboard and bellows. It produces sound by air passing over reeds when the player expands or compresses the bellows, used in various music genres.",
+    },
+    {
+      id  : '4',
+      question: "Can I create an accordion component with a different framework?",
+      answer:
+        "Yes of course, it is very possible to create an accordion component with another framework.",
+    },
+  ];
+  
   return (
+
     <>
-        <h1>Task 01</h1>
-        <p>hello TP uchiha</p>
+      <div className='wrap'>
+        <button>Enable Multi Selection</button>
+        <div className='acc'>
+            {
+              datas && datas.length>0 ? <div>
+                  {datas.map((data)=>(
+                    <div className='item'>
+                        <div onClick={()=>HandleSS(data.id)} className='title'>
+                            <h3>{data.question}</h3>
+                            <span>+</span>
+                        </div>
+                        {
+                          data.id===select? <div className='content'>{data.answer}</div>: <div></div>
+                        }
+                    </div>
+                  ))}
+              </div>
+              : 
+              <div>Data Not found!!!</div>
+            }
+        </div>
+      </div>
     </>
   )
 }
