@@ -7,6 +7,7 @@ function App() {
   const HandleSS=(id)=>{
     setSelect(id);
   }
+
   const datas = [
     {
       id  : '1',
@@ -38,7 +39,7 @@ function App() {
 
     <>
       <div className='wrap'>
-        <button>Enable Multi Selection</button>
+        <button>Accordian</button>
         <div className='acc'>
             {
               datas && datas.length>0 ? <div>
