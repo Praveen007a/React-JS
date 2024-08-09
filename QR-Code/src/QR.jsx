@@ -4,6 +4,9 @@ export const QR = () => {
   return (
     <>
         <div className='cont'>
+            <div>
+              <img src=""/>
+            </div>
             <label htmlFor="dataInput" className='inp-lab'>
                 Data for QR  Code:
             </label>
