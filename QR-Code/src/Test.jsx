@@ -1,31 +1,28 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './Test.css'
+import axios from 'axios';
 
 export const Test = () => {
-  const[count,setCount]=useState(0);
-  const click=(e)=>{
-      setCount(count+e);
-  }
-  const Nclick=(e)=>{
-    setCount(count-e);
-  }
-  const Reset=()=>{
-    setCount(0);
-  }
+  const[students,setStudents]= useState([]);
+  useEffect(()=>{
+    const fetchData= async ()=>{
+      try{
+        const response= await axios.get("http://localhost:8080/students/6")
+        setStudents(response.data);
+        console.log(response.data);
+      }catch(error){
+        console.log(error+" fetching data");
+      }
+    }
+    fetchData();
+  })
+  
   return (
     <>
-      <div className='btn'>
-          <button onClick={()=>click(1)}>+1</button>
-          <button onClick={()=>click(2)}>+2</button>
-          <button onClick={()=>click(5)}>+5</button>
-          <button onClick={()=>Nclick(1)}>-1</button>
-          <button onClick={()=>Nclick(2)}>-2</button>
-          <button onClick={()=>Nclick(5)}>-5</button>
-      </div>
-      <div>
-        <h1>{count}</h1>
-        <button onClick={Reset}>Reset</button>
-      </div>
+      <h1>Springboot and react</h1>
+      {students.map((student,id)=>(
+        <h3 key={id}>{student.name}</h3>
+      ))}
     </>
   )
 }
