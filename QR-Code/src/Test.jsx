@@ -7,7 +7,7 @@ export const Test = () => {
   useEffect(()=>{
     const fetchData= async ()=>{
       try{
-        const response= await axios.get("http://localhost:8080/students/6")
+        const response= await axios.get("http://localhost:8080/mess")
         setStudents(response.data);
         console.log(response.data);
       }catch(error){
@@ -20,9 +20,7 @@ export const Test = () => {
   return (
     <>
       <h1>Springboot and react</h1>
-      {students.map((student,id)=>(
-        <h3 key={id}>{student.name}</h3>
-      ))}
+      <h4>{students}</h4>
     </>
   )
 }
