@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "2",
+      "name": "TP",
+      "email": "TP@gmail.com",
+      "contact": "80729098113"
+    },
+    {
+      "id": "3",
+      "name": "Kamel",
+      "email": "kamel@gmail.com",
+      "contact": "90869633"
+    },
+    {
+      "id": "4",
+      "name": "Kaguya",
+      "email": "kavi@gmail.com",
+      "contact": "797393891"
+    },
+    {
+      "id": "5",
+      "name": "Naveen",
+      "email": "naveen@gmail.com",
+      "contact": "1232393891"
+    },
+    {
+      "id": "1f6a",
+      "name": "sahil",
+      "email": "sahil@gmail.com",
+      "contact": "09079688t6"
+    },
+    {
+      "id": "ec9f",
+      "name": "UCHIHA TP",
+      "email": "praveendhamodharncs2020@gmail.com",
+      "contact": "90808923"
+    }
+  ]
+}

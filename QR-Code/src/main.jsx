@@ -4,11 +4,13 @@ import App from './App.jsx'
 import './qr.css'
 import { QR } from './QR.jsx'
 import { Test } from './Test.jsx'
+import { Demo } from './Demo.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <QR/> */}
-    <Test/>
+    {/* <Test/> */}
+    <Demo/>
 
   </StrictMode>,
 )
